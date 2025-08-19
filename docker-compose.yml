@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  sql_server:
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: Password1234
+    ports:
+      - 1433:1433
+    volumes:
+      - sql_server_data:/var/opt/mssql
+
+volumes:
+  sql_server_data:
